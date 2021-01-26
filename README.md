@@ -4,7 +4,7 @@ This repo contains the files for retrieving the entire metadata(supported by Met
 
 <b>Sample usecase: </b> <br/>
 This can be helpful for taking backup of entire ORG. 
-This can be used for taking ORG backup during sandbox refresh process so that we do not lose any data accidentally.
+One Sample Use Case will be taking ORG backup during sandbox refresh process so that we do not lose any data accidentally.
 
 
 <b> Technical Design </b> <br/>
