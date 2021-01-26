@@ -186,9 +186,6 @@ finalPackageXml +=  '   <Package xmlns="http://soap.sforce.com/2006/04/metadata"
 
                     count += 1;
 
-                    if(item == 'Role')
-                                continue;
-
                    log(chalk.black.green('Listing Metadata For In Progress',item));
                    log(chalk.black.green('Pending Metadata Count :: ',metadataTypes.length - count));
       
