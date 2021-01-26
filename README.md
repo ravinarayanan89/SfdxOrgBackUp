@@ -23,7 +23,7 @@ After running the above command , the below question will be displayed. Press Y 
 <b> Please enter the SFDX Configured UserName for Full backup </b> : sampletest@test.com.org (<i> Please note, this username should already be configured in sfdx </i> ) <br/>
 
 After entering the username , the Metadata Retrieval will start. <br/>
-<img src="https://github.com/ravi0389/SalesforceOrgBackUp/blob/main/screenshots/Retrieval1.png"> </img>
+<img src="https://github.com/ravinarayanan89/SfdxOrgBackUp/blob/main/screenshots/Retrieval1.png"> </img>
 
 This will take time based on the total amount of metadata present in the org. 
 
