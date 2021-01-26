@@ -1,6 +1,6 @@
 # SalesforceOrgBackUp
 
-This repo contains the files for retrieving the entire metadata(supported by Metadata API)  from Salesforce org ( the org should be configured/Authorized in SFDX already). 
+This repo contains the node.js script for retrieving the entire metadata(supported by Metadata API)  from Salesforce org ( the org should be configured/Authorized in SFDX already). 
 
 <b>Sample usecase: </b> <br/>
 This can be helpful for taking backup of entire ORG. 
