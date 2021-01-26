@@ -28,11 +28,16 @@ After entering the username , the Metadata Retrieval will start. <br/>
 This will take time based on the total amount of metadata present in the org. 
 
 After all the metadata retrieval is completed , we will be able to find the metadata inside of folder <b>RetrievedFiles</b> in the same directory.
+<img src="https://github.com/ravinarayanan89/SfdxOrgBackUp/blob/main/screenshots/RetrieveResults.png"> </img>
 
 <b> <center> How to Search for a String in the downloaded Metadata ??  </center> </b>  <br/>
 <b> <i> Please note , the Search functionality will only be applicable after the metadata is downloaded </i> </b>
+
+<img src="https://github.com/ravinarayanan89/SfdxOrgBackUp/blob/main/screenshots/Search1.png"> </img>
 
 <b>Do you want to Retrieve the full backup of Org??(Y/N)</b> : N <br/>
 <b> Please enter the text to search.(Please note this string will be searched on the retrieved metadata. If you do not have metadata downloaded already , please cancel by pressing enter and download metadata from step1 </b> : Demo (Please enter the string to be searched here )<br/>
 
 This will start searching for the given keyword in the downloaded metadata files and generate a csv report with the search results. The csv report can be found inside of the folder Search Results.
+
+<img src="https://github.com/ravinarayanan89/SfdxOrgBackUp/blob/main/screenshots/SearchResults.png"> </img>
