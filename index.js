@@ -271,24 +271,31 @@ finalPackageXml +=  '   <Package xmlns="http://soap.sforce.com/2006/04/metadata"
                                 let metadataFiles = fs.readdirSync('./RetrievedFiles/unpackaged/'+item);
                                 for(var metadata of metadataFiles){
 
-                                        if(!metadata.includes('.'))
-                                                        continue;
+                                        if(item == 'aura' || item == 'lwc'){
+                                                
+                                                let jsFiles = fs.readdirSync('./RetrievedFiles/unpackaged/'+item+'/'+metadata);
 
-                                        var data = fs.readFileSync('./RetrievedFiles/unpackaged/'+item+'/'+metadata);
-                                        if(data.toString().toLowerCase().includes(searchText.toLowerCase())){
+                                                for(var jsFile of jsFiles){
+                                                        var data = fs.readFileSync('./RetrievedFiles/unpackaged/'+item+'/'+metadata+'/'+jsFile);
+                                                        let searchResult = search(data,searchText);
+                                                        if(searchResult){
+                                                                searchResults.push(searchResult);
+                                                        }
 
-                                                        var index = data.toString().toLowerCase().indexOf(searchText.toLowerCase()); 
-                                                        var tempString = data.toString().substring(0, index);
-                                                        var lineNumber = tempString.split('\n').length;
+                                                }
 
-                                                        var searchResult = {};
-                                                        searchResult.FileName = metadata;
-                                                        searchResult.Folder = item;
-                                                        searchResult.LineNumber = lineNumber;
+                                        }else{
+                                                if(!metadata.includes('.'))
+                                                continue;
+
+                                                var data = fs.readFileSync('./RetrievedFiles/unpackaged/'+item+'/'+metadata);
+                                                let searchResult = search(data,searchText);
+                                                if(searchResult){
                                                         searchResults.push(searchResult);
-
+                                                }
                                         }
-                                               
+                                       
+
                                 }
                          }
                                       
@@ -302,6 +309,25 @@ finalPackageXml +=  '   <Package xmlns="http://soap.sforce.com/2006/04/metadata"
                  });
 
 
+        }
+
+        let search = function(data,searchText){
+    
+                if(data.toString().toLowerCase().includes(searchText.toLowerCase())){
+
+                                var index = data.toString().toLowerCase().indexOf(searchText.toLowerCase()); 
+                                var tempString = data.toString().substring(0, index);
+                                var lineNumber = tempString.split('\n').length;
+
+                                var searchResult = {};
+                                searchResult.FileName = metadata;
+                                searchResult.Folder = item;
+                                searchResult.LineNumber = lineNumber;
+                                return searchResult;
+
+                }
+
+                return false;
         }
 
     })();
