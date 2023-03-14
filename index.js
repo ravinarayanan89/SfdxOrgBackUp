@@ -115,6 +115,19 @@ finalPackageXml +=  '   <Package xmlns="http://soap.sforce.com/2006/04/metadata"
         });
     }
 
+
+let getFile = function(path){
+    let file = fse.statSync(path);
+    if(!file.isDirectory()){ 
+        tempFiles.push(path);
+
+    }else{
+        let files = fse.readdirSync(path);
+        for(var item of files){
+                 getFile(path+'/'+item);
+        }
+    }
+};
     (async()=>{
 
 
